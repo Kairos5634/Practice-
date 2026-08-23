@@ -1,9 +1,9 @@
-resource "aws_cloudfront_distribution" "example" {
+resource "aws_cloudfront_distribution" "my-distribution" {
   enabled             = true
   default_root_object = "index.html"
 
   origin {
-    domain_name = "example-origin.s3.amazonaws.com"
+    domain_name = "volstandigg.shop.s3.amazonaws.com"
     origin_id   = "example-origin"
   }
 
