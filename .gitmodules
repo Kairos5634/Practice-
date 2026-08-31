@@ -1,0 +1,3 @@
+[submodule "CDEC-student-app"]
+	path = CDEC-student-app
+	url = https://github.com/jambhulkarcloudblitz-alt/CDEC-studentapp.git
