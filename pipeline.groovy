@@ -6,15 +6,16 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Kairos5634/Student-app.git'
             }
         }
-    }
-}
-        // stage ('BUILD') {
-        //     steps {
-        //         sh '''cd backend
-        //                 mvn clean package -DskipTests
-        //                 '''
-        //     }
-        // }
+    
+
+        stage ('BUILD') {
+            steps {
+                sh '''cd backend
+                        mvn clean package -DskipTests
+                        '''
+            }
+        }
+    }}
 //         stage ('TEST') {
 //             steps {
 //                 sh '''cd backend
