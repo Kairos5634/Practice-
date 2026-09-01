@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent { label 'your-ssh-node-label' }
+    tools {
+        maven 'Maven3'   // name must match the Tool config
+    }
     stages {
         stage ('PULL') {
             steps {
@@ -8,13 +11,15 @@ pipeline {
         }
     
 
-        stage ('BUILD') {
+         stages {
+        stage('Build') {
             steps {
-                sh '''cd backend
-                        mvn clean package -DskipTests
-                        '''
+                dir('backend') {
+                    sh 'mvn clean package -DskipTests'
+                }
             }
         }
+    }
     }}
 //         stage ('TEST') {
 //             steps {
