@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'your-ssh-node-label' }
     tools {
-        maven 'Maven3'   // name must match the Tool config
+        maven 'Maven'   
     }
     stages {
         stage ('PULL') {
