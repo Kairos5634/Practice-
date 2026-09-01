@@ -9,9 +9,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Kairos5634/Student-app.git'
             }
         }
-    
-
-         stages {
+    }  
+    stages {
         stage('Build') {
             steps {
                 dir('backend') {
@@ -20,7 +19,7 @@ pipeline {
             }
         }
     }
-    }}
+    }
 //         stage ('TEST') {
 //             steps {
 //                 sh '''cd backend
