@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'your-ssh-node-label' }
+    agent { label 'node01' }
     tools {
         maven 'Maven'   
     }
