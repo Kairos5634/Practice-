@@ -16,22 +16,20 @@ pipeline {
                 }
             }
         }
+    
+    
+        stage ('TEST') {
+            steps {
+                sh '''cd backend
+                 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \\
+                   -Dsonar.projectKey=student-app \
+                   -Dsonar.projectName='student=app' \
+                   -Dsonar.host.url=http://16.171.206.249:9000 \
+                   -Dsonar.token=sqp_95ad8eb2dae20ecd08fbd3a8b78e160707781467'''
+            }
+        }
     }
-    }
-//         stage ('TEST') {
-//             steps {
-//                 sh '''cd backend
-//                         mvn clean verify sonar:sonar \
-//                          -Dsonar.projectKey=pipeline \
-//                           -Dsonar.projectName='pipeline' \
-//                           -Dsonar.host.url=http://51.20.193.186:9000 \
-//                           -Dsonar.token=sqp_d8ea28575d2879e33f33188fea6a9022df4bd88d
-
-//                         '''
-//             }
-//         }
-//     }
-// }
+}
 //         stage ('TEST'){
 //             steps {
 //                 sh 'echo "TEST SUCCESS"'
